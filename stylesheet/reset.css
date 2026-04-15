@@ -112,3 +112,8 @@ meter {
 ::-webkit-details-marker {
     display: none;
 }
+
+img {
+    max-width: 100%;
+    display: block;
+}
