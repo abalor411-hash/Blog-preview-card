@@ -35,3 +35,34 @@ const cardsData = [
         featured: false,
     },
 ];
+
+const container = document.querySelector('.container');
+function renderCards(cards) {
+    container.innerHTML = cards
+        .map(card => `
+            <article class= "card ${card.featured ? "card--featured" : ""}">
+        <div class= "card__image" >
+                    <img src="${card.image}" alt="${card.title}">
+                </div>
+                <div class="card__content">
+                    <div class="card__header">
+                        <span class="alert">${card.category}</span>
+                        <time datetime="${card.date}" class="card__date">
+                            ${card.dateText}
+                        </time>
+                        <h2 class="card__title">
+                            ${card.title}
+                        </h2>
+                        <p class="card__description">${card.description}</p>
+                    </div>
+                    <div class="card__footer">
+                        <img class="userpic" src="${card.avatar}" alt="${card.author}">
+                        <p class="card__author">${card.author}</p>
+                    </div>
+                </div>
+            </article >
+            `
+        )
+        .join("");
+}
+renderCards(cardsData);

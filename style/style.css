@@ -12,11 +12,6 @@
     --grey-500: #6b6b6b;
   }
 
-  img {
-    max-width: 100%;
-    display: block;
-  }
-
   .card__title {
     font-weight: 700;
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
@@ -33,6 +28,9 @@
     font-family: "Figtree", system-ui, sans-serif;
     background-color: var(--yellow);
     padding: 1rem;
+  }
+
+  .page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +100,7 @@
 
   .userpic {
     border-radius: 50%;
+    max-width: 2rem;
   }
 
   @media (max-width: 1024px) {
