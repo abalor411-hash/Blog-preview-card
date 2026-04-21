@@ -66,3 +66,28 @@ function renderCards(cards) {
         .join("");
 }
 renderCards(cardsData);
+
+
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', function() {
+    // Переключение класса active
+    buttons.forEach(el => el.classList.remove('active'));
+    this.classList.add('active');
+
+
+    const category = this.textContent.trim().toUpperCase();
+    
+    if (category === 'ALL') {
+      renderCards(cardsData);
+    } else {
+      const filtered = cardsData.filter(card => 
+        card.category.toUpperCase() === category
+      );
+      renderCards(filtered);
+    }
+  });
+});
+
+

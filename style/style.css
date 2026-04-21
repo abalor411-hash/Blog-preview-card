@@ -11,7 +11,33 @@
     --grey-950: #111111;
     --grey-500: #6b6b6b;
   }
-
+  .header{
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+  .button{  
+    flex: 1;
+    max-width: 10rem; /* важно */
+    text-align: center;
+    color:var(--grey-950);
+    background-color: white;
+    border: 1px solid var(--grey-950);
+    border-radius: 0.25rem;
+    font-weight: 800;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    transition: background-color 0.3s ease-in;
+  }
+  .active {
+    background-color: var(--grey-950);
+    color: white;
+  }
+  .button:hover {
+    background-color: var(--grey-950);
+    color: white;
+    cursor: pointer;
+  }
   .card__title {
     font-weight: 700;
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
@@ -34,14 +60,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
   }
 
   .card {
     background-color: white;
     padding: clamp(1rem, 3vw, 1.5rem);
     width: 100%;
-    max-width: 24rem;
+    max-width: 22rem;
     border-radius: 1.25rem;
     border: 1px solid var(--grey-950);
     box-shadow: 0.5rem 0.5rem 0 0 var(--grey-950);
@@ -94,8 +120,10 @@
 
   .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 2rem;
+    max-width: 72rem;
+    justify-items: center;
   }
 
   .userpic {
@@ -109,4 +137,6 @@
       grid-template-columns: repeat(1, 1fr);
       gap: 2rem;
     }
+    
+
   }
